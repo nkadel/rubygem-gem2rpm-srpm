@@ -8,9 +8,9 @@
 Summary: Generate rpm specfiles from gems
 Name: rubygem-%{gemname}
 Version: 0.10.1
-Release: 1%{?dist}
+Release: 0.1%{?dist}
 Group: Development/Languages
-License: 
+License: GPLv2
 URL: https://github.com/lutter/gem2rpm/
 Source0: http://rubygems.org/gems/%{gemname}-%{version}.gem
 Requires: ruby(abi) = %{rubyabi}
@@ -63,6 +63,8 @@ find %{buildroot}%{geminstdir}/bin -type f | xargs chmod a+x
 %{geminstdir}/lib
 %exclude %{gemdir}/cache/%{gemname}-%{version}.gem
 %{gemdir}/specifications/%{gemname}-%{version}.gemspec
+# Added for template .erb files
+%{gemdir}/gems/%{gemname}-%{version}/templates
 
 %files doc
 %doc %{gemdir}/doc/%{gemname}-%{version}
@@ -74,3 +76,6 @@ find %{buildroot}%{geminstdir}/bin -type f | xargs chmod a+x
 %changelog
 * Mon Nov 17 2014 Nico Kadel-Garcia <nkadel@gmail.com> - 0.10.1-1
 - Initial package
+- Set License to GPLv2 manually
+- Add templates to list of files
+
