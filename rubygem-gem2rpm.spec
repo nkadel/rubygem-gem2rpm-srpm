@@ -13,9 +13,10 @@ Group: Development/Languages
 License: GPLv2
 URL: https://github.com/lutter/gem2rpm/
 Source0: http://rubygems.org/gems/%{gemname}-%{version}.gem
-Requires: ruby(abi) = %{rubyabi}
+# ruby(abi) does not exist in RHEL 7, discard dependency
+#Requires: ruby(abi) = %{rubyabi}
 Requires: ruby(rubygems) 
-BuildRequires: ruby(abi) = %{rubyabi}
+#BuildRequires: ruby(abi) = %{rubyabi}
 BuildRequires: ruby(rubygems) 
 BuildRequires: ruby 
 BuildArch: noarch
@@ -78,4 +79,5 @@ find %{buildroot}%{geminstdir}/bin -type f | xargs chmod a+x
 - Initial package
 - Set License to GPLv2 manually
 - Add templates to list of files
+- Discard 'ruby(abi)' dependencies, not in RHEL 7
 
