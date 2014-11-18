@@ -1,0 +1,6 @@
+*.gem
+*.gz
+*.rpm
+*.tar.*
+*~
+epel-*
