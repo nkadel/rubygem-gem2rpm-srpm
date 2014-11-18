@@ -6,7 +6,12 @@ Wrapper for SRPM building tools for the gem2rpm rubygem.
 This is pretty straightforward: I used 'gem install gem2rpm' to get
 the gem2rpm tool, and then used it to build the RPM itself.
 
-     gem2rpm --fetch > rubygem-gem2rpm.spec
+* gem2rpm --fetch > rubygem-gem2rpm.spec
+
+Just download the relevant gem from the Source entry, and run these commands.
+
+* make # to build designated versions with "mock"
+* make build # to build local copy
 
 It did not wind up detecting its own LICENSE, and the "templates"
 files it uses were not set. It's also not working yet for RHEL 7
